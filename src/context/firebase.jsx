@@ -18,7 +18,7 @@ import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 const FirebaseContext = createContext(null);
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCqub5Pfx6LqDr8X8uPSXx2Q05ywYcPwHw",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: "bookstore-6d336.firebaseapp.com",
   projectId: "bookstore-6d336",
   storageBucket: "bookstore-6d336.appspot.com",

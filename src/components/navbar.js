@@ -21,17 +21,17 @@ const NavigationMenu = () => {
       <Navbar bg="dark" variant="dark">
         <Container>
           {/* <Navbar.Brand as={Link} to="/">
-            Navbar
+            make_my_book
           </Navbar.Brand> */}
           <Nav className="me-auto">
             <Nav.Link as={Link} to="/">
               Home
             </Nav.Link>
             <Nav.Link as={Link} to="/book/list">
-              Add Listing
+              Add Books
             </Nav.Link>
             <Nav.Link as={Link} to="/book/orders">
-              Orders
+              My Books
             </Nav.Link>
           </Nav>
           <Nav>

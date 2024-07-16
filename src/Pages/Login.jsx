@@ -3,29 +3,31 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useFirebase } from "../context/firebase";
 import { useNavigate } from "react-router-dom";
+import "../style/LoginPage.css"; // Import custom CSS
 
 const LoginPage = () => {
   const firebase = useFirebase();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const naviagte = useNavigate();
+  const navigate = useNavigate();
   useEffect(() => {
     if (firebase.isLoggedUser) {
-      // neviagte to home
-      naviagte("/");
+      // navigate to home
+      navigate("/");
     }
-  }, [firebase, naviagte]);
-
+  }, [firebase, navigate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const user = await firebase.signinwithEmailandPass(email, password);
-    console.log("Login Succesfull", user);
+    console.log("Login Successful", user);
   };
+
   return (
-    <div className="container mt-5">
-      <Form onSubmit={handleSubmit}>
+    <div className="container mt-5 login-page">
+      <Form onSubmit={handleSubmit} className="login-form">
+        <h2 className="form-title">Login</h2>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control
@@ -45,11 +47,11 @@ const LoginPage = () => {
             placeholder="Password"
           />
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button variant="primary" type="submit" className="submit-button">
           Login
         </Button>
-        <Button onClick={firebase.signupwithGoogle} variant="danger">
-          Signin with Google
+        <Button onClick={firebase.signupwithGoogle} variant="danger" className="google-button">
+          Sign in with Google
         </Button>
       </Form>
     </div>

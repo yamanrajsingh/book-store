@@ -1,0 +1,51 @@
+.login-page {
+    background-color: #212529; /* Dark background */
+    color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #ffc107; /* Warning color */
+  }
+  
+  .form-label {
+    color: #ffc107; /* Warning color */
+  }
+  
+  .submit-button {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 1rem;
+    background-color: #007bff; /* Primary color */
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .submit-button:hover {
+    background-color: #0056b3; /* Darker primary color */
+  }
+  
+  .google-button {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 1rem;
+    background-color: #dc3545; /* Danger color */
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .google-button:hover {
+    background-color: #c82333; /* Darker danger color */
+  }
+  

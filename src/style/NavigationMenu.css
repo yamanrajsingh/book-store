@@ -1,0 +1,21 @@
+.navbar-dark {
+    background-color: #212529;
+  }
+  
+  .nav-link {
+    color: #ffc107 !important; /* Bootstrap warning color for links */
+    font-weight: bold;
+    transition: color 0.2s;
+   
+  }
+  
+  .nav-link:hover {
+    color: #fff !important; /* White color on hover */
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+    color: #ffc107 !important; /* Branding color */
+    font-weight: bold;
+  }
+  

@@ -3,31 +3,31 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useFirebase } from "../context/firebase";
 import { useNavigate } from "react-router-dom";
+import "../style/RegisterPage.css"; // Import custom CSS
 
 const RegisterPage = () => {
-
   const firebase = useFirebase();
-  // console.log(firebase);
   const [email, setEmail] = useState("");
-
   const [password, setPassword] = useState("");
 
-  const naviagte = useNavigate();
+  const navigate = useNavigate();
   useEffect(() => {
     if (firebase.isLoggedUser) {
-      // neviagte to home
-      naviagte("/");
+      // navigate to home
+      navigate("/");
     }
-  }, [firebase, naviagte]);
+  }, [firebase, navigate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     await firebase.signupwitheEmailandPassword(email, password);
-    // console.log("Signup Succesfull",user);
+    // console.log("Signup Successful", user);
   };
+
   return (
-    <div className="container mt-5">
-      <Form onSubmit={handleSubmit}>
+    <div className="container mt-5 register-page">
+      <Form onSubmit={handleSubmit} className="register-form">
+        <h2 className="form-title">Create Account</h2>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control
@@ -47,8 +47,13 @@ const RegisterPage = () => {
             placeholder="Password"
           />
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button variant="primary" type="submit" className="submit-button">
           Create Account
+        </Button>
+        <Button variant="primary" type="submit" className="submit-button1" onClick={()=>{
+           navigate("/login");
+        }}>
+         Login
         </Button>
       </Form>
     </div>

@@ -1,0 +1,38 @@
+.details-container {
+    background-color: #212529; /* Bootstrap dark background */
+    color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .details-title {
+    text-align: center;
+    color: #ffc107; /* Bootstrap warning color */
+  }
+  
+  .details-image {
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+  }
+  
+  .details-subtitle {
+    margin-top: 20px;
+    color: #ffc107; /* Bootstrap warning color */
+  }
+  
+  .details-info {
+    margin-top: 10px;
+    line-height: 1.6;
+  }
+  
+  .details-info b {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-label {
+    color: #ffc107; /* Bootstrap warning color */
+  }
+  

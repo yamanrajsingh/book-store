@@ -2,18 +2,24 @@ import React, { useEffect, useState } from "react";
 import { useFirebase } from "../context/firebase";
 import Cards from "../components/Card";
 import CardGroup from "react-bootstrap/esm/CardGroup";
+import { useNavigate } from "react-router-dom";
 
 const Orders = () => {
+  const naviagte = useNavigate();
   const firebase = useFirebase();
   const [books, setBooks] = useState([]);
+
   useEffect(() => {
     if (firebase.isLoggedUser)
       firebase
         .fetchMyBooks(firebase.user.uid)
         ?.then((books) => setBooks(books.docs));
+        else {
+          naviagte("/login");
+        }
   }, [firebase]);
+  
 
-  if (!firebase.isLoggedUser) return <h1>please Login</h1>;
 
   return (
     <div className="conatiner mt-5">

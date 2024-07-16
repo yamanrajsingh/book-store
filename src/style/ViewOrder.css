@@ -1,0 +1,43 @@
+.view-order-container {
+    background-color: #212529; /* Dark background */
+    color: #fff;
+    padding-top: 2rem;
+    position: absolute;
+    top:14%;
+    left: 10%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .view-order-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #ffc107; /* Warning color */
+  }
+  
+  .order-card {
+    border: 1px solid #ffc107; /* Warning color border */
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    background-color: #343a40; /* Slightly lighter dark color for contrast */
+  }
+  
+  .order-card h5,
+  .order-card h6,
+  .order-card p {
+    margin: 0.5rem 0;
+  }
+  
+  .order-card h5 {
+    color: #ffc107; /* Warning color */
+  }
+  
+  .order-card h6 {
+    color: #adb5bd; /* Light gray color */
+  }
+  
+  .order-card p {
+    color: #ced4da; /* Lighter gray color */
+  }
+  

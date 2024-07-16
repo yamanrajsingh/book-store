@@ -1,9 +1,9 @@
-// Route
+// App.js
 import { Route, Routes } from "react-router-dom";
 // CSS
-import "./App.css";
+import "./style/App.css"
 import "bootstrap/dist/css/bootstrap.min.css";
-// Page
+// Pages
 import RegisterPage from "./Pages/Register";
 import LoginPage from "./Pages/Login";
 import ListingPage from "./Pages/List";
@@ -11,22 +11,26 @@ import HomePage from "./Pages/Home";
 import Details from "./Pages/Detail";
 import Orders from "./Pages/ViewOrder";
 import ViewOrder from "./Pages/ViewOrderDetails";
-// components
+// Components
 import NavigationMenu from "./components/navbar";
+import Footer from "./components/Footer"; // Import the Footer component
 
 function App() {
   return (
-    <div>
+    <div className="app-container">
       <NavigationMenu />
-      <Routes>
-        <Route path="/" element={<HomePage />}></Route>
-        <Route path="/login" element={<LoginPage />}></Route>
-        <Route path="/register" element={<RegisterPage />}></Route>
-        <Route path="/book/list" element={<ListingPage />}></Route>
-        <Route path="/book/view/:bookId" element={<Details />}></Route>
-        <Route path="/book/orders" element={<Orders />}></Route>
-        <Route path="/books/orders/:bookId" element={<ViewOrder />}></Route>
-      </Routes>
+      <div className="content-wrap">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/book/list" element={<ListingPage />} />
+          <Route path="/book/view/:bookId" element={<Details />} />
+          <Route path="/book/orders" element={<Orders />} />
+          <Route path="/books/orders/:bookId" element={<ViewOrder />} />
+        </Routes>
+      </div>
+      <Footer />
     </div>
   );
 }
